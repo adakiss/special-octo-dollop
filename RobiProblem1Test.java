@@ -63,34 +63,8 @@ class RobiProblem1Test {
 				for (int j = 0; j < actTargetSum - i + 1; j++) {
 					b = j;
 					c = actTargetSum - (a + b);
-					long lb, lc;
-					if(c < 100) {
-						if(c < 10) {
-							lc = 1;
-						} else {
-							lc = 2;
-						}
-					} else {
-						if(c < 1000) {
-							lc = 3;
-						} else {
-							lc = 4;
-						}
-					}
-					
-					if(b < 100) {
-						if(b < 10) {
-							lb = 1;
-						} else {
-							lb = 2;
-						}
-					} else {
-						if(b < 1000) {
-							lb = 3;
-						} else {
-							lb = 4;
-						}
-					}
+					long lc = getDigitCountOfNumber(c);					
+					long lb = getDigitCountOfNumber(b);
 					
 					long calculated1 = (long)((Math.pow(10, (lb + lc))* a) + (Math.pow(10, lc) * b) + c);
 					long calculated2 = (long)((a+b+c)*(a+b+c)*(a+b+c));
@@ -104,6 +78,24 @@ class RobiProblem1Test {
 		}
 		log.info("END");
 		assertEquals(1, 1);
+	}
+
+	private long getDigitCountOfNumber(long c) {
+		long lc;
+		if(c < 100) {
+			if(c < 10) {
+				lc = 1;
+			} else {
+				lc = 2;
+			}
+		} else {
+			if(c < 1000) {
+				lc = 3;
+			} else {
+				lc = 4;
+			}
+		}
+		return lc;
 	}
 	
 	@Test
@@ -123,33 +115,9 @@ class RobiProblem1Test {
 						b = j;
 						c = actTargetSum - (a + b);
 						long lb, lc;
-						if(c < 100) {
-							if(c < 10) {
-								lc = 1;
-							} else {
-								lc = 2;
-							}
-						} else {
-							if(c < 1000) {
-								lc = 3;
-							} else {
-								lc = 4;
-							}
-						}
+						lc = getDigitCountOfNumber(c);
 						
-						if(b < 100) {
-							if(b < 10) {
-								lb = 1;
-							} else {
-								lb = 2;
-							}
-						} else {
-							if(b < 1000) {
-								lb = 3;
-							} else {
-								lb = 4;
-							}
-						}
+						lb = getDigitCountOfNumber(b);
 						
 						long calculated1 = (long)((Math.pow(10, (lb + lc))* a) + (Math.pow(10, lc) * b) + c);
 						long calculated2 = (long)((a+b+c)*(a+b+c)*(a+b+c));
@@ -183,34 +151,9 @@ class RobiProblem1Test {
 					for (int j = 0; j < actTargetSum - i + 1; j++) {
 						b = j;
 						c = actTargetSum - (a + b);
-						long lb, lc;
-						if(c < 100) {
-							if(c < 10) {
-								lc = 1;
-							} else {
-								lc = 2;
-							}
-						} else {
-							if(c < 1000) {
-								lc = 3;
-							} else {
-								lc = 4;
-							}
-						}
 						
-						if(b < 100) {
-							if(b < 10) {
-								lb = 1;
-							} else {
-								lb = 2;
-							}
-						} else {
-							if(b < 1000) {
-								lb = 3;
-							} else {
-								lb = 4;
-							}
-						}
+						long lc = getDigitCountOfNumber(c);
+						long lb = getDigitCountOfNumber(b);
 						
 						long calculated1 = (long)((Math.pow(10, (lb + lc))* a) + (Math.pow(10, lc) * b) + c);
 						long calculated2 = (long)((a+b+c)*(a+b+c)*(a+b+c));
